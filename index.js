@@ -5,17 +5,17 @@ import { gasPriceToGwei } from "./utils.js";
 import "log-timestamp";
 import "dotenv/config";
 
-const BSC_RPC_URL = process.env.BSC_RPC_URL;
+const NETWORK_RPC_URL = process.env.BSC_RPC_URL;
 const PRIVATE_KEY_ZERO_GAS = process.env.PRIVATE_KEY_ZERO_GAS || "";
 
 if (PRIVATE_KEY_ZERO_GAS === "") {
   console.warn(
-    "Must provide PRIVATE_KEY_ZERO_GAS environment variable, corresponding to Binance Smart Chain EOA with assets to be transferred"
+    "Must provide PRIVATE_KEY_ZERO_GAS environment variable, corresponding to the compromised wallet."
   );
   process.exit(1);
 }
 
-const provider = new providers.JsonRpcProvider(BSC_RPC_URL);
+const provider = new providers.JsonRpcProvider(NETWORK_RPC_URL);
 const walletZeroGas = new Wallet(PRIVATE_KEY_ZERO_GAS, provider);
 
 console.log(`Zero Gas Account: ${walletZeroGas.address}`);
@@ -55,7 +55,7 @@ async function burn(wallet) {
 }
 
 async function main() {
-  console.log(`Connected to ${BSC_RPC_URL}`);
+  console.log(`Connected to ${NETWORK_RPC_URL}`);
   provider.on("block", async (blockNumber) => {
     console.log(`New block ${blockNumber}`);
     await burn(walletZeroGas);

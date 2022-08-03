@@ -19,14 +19,6 @@ A bot which monitors a wallet address and burns any ETH or BNB sent to it, preve
 
 - `npm run start`
 
-## Help
-
-Any advise for common problems or issues.
-
-```
-command to run if program contains helper info
-```
-
 ## Acknowledgments
 
 This application is largely based off code supplied in a [twitter thread](https://twitter.com/smpalladino/status/1373049027365904389?s=20&t=PE8rsffOnw8PxiKzpl7OdQ) by Santiago Palladino.

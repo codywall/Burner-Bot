@@ -1,6 +1,6 @@
 # Crypto Burner Bot
 
-A bot which monitors a wallet address and burns any ETH or BNB sent to it, preventing anyone from paying gas fees and withdrawing funds from it.
+A bot which monitors a wallet address and burns any ETH or BNB sent to it, preventing anyone from paying gas fees and withdrawing funds from it. The primary purpose is to prevent a sweeper bot from emptying a compromised wallet.
 
 ## Getting Started
 
